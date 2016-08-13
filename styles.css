@@ -33,8 +33,8 @@ figcaption,
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 .fine-header h1,
@@ -61,14 +61,14 @@ figcaption {
 @media (min-width: 768px) {
   .fine-header--nav {
     position: absolute;
-    width: 100%;
-    background-color: transparent;
     transition: background-color 0.5s;
+    background-color: transparent;
+    width: 100%;
   }
 
   .fine-header--nav:hover {
-    background-color: #000;
     transition: background-color 0.5s;
+    background-color: #000;
   }
 }
 
@@ -79,23 +79,23 @@ figcaption {
 }
 
 .fine-header--menu {
-  position: relative;
   display: inline-block;
+  position: relative;
   float: right;
-  height: 18px;
-  width: 25px;
-  cursor: pointer;
   margin: 18px 30px 0;
+  cursor: pointer;
   padding-top: 18px;
+  width: 25px;
+  height: 18px;
 }
 
 .menu--bar {
-  left: 0;
   display: block;
   position: absolute;
+  left: 0;
+  background-color: #fff;
   width: 100%;
   height: 4px;
-  background-color: #fff;
 }
 
 /* TODO: Make this menu animate */
@@ -130,28 +130,27 @@ figcaption {
 }
 
 .hero--welcome {
-  transform: translateY(0);
-  background-color: #9aa142;
   position: absolute;
-  left: 50%;
   top: 75px;
-  color: #fff;
+  left: 50%;
+  animation: fadeInWelcome ease-in 0.5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  background-color: #9aa142;
   padding: 6px 15px 5px 0;
   text-transform: uppercase;
+  color: #fff;
   font-size: 0.8rem;
-  opacity: 0;
-  animation: fadeInWelcome ease-in 0.5s;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
 }
 
 .hero--welcome::before {
-  content: '';
   margin-right: -7px;
-  width: 0;
-  height: 0;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #9aa142;
+  width: 0;
+  height: 0;
+  content: '';
 }
 
 @media (min-width: 768px) {
@@ -194,17 +193,17 @@ figcaption {
 
 /* TODO: fix this spacing. */
 .showcase-card figcaption {
-  position: absolute;;
+  position: absolute;
+  transition: opacity 0.5s;
   opacity: 0;
   margin-top: calc(-1 * (1.5rem + 10px));
   padding-bottom: 10px;
   padding-left: 10px;
-  transition: opacity 0.5s;
 }
 
 .showcase-card:hover figcaption {
-  opacity: 1;
   transition: opacity 0.5s ease-in;
+  opacity: 1;
 }
 
 [data-friend='kimpton-hotel'],
@@ -227,7 +226,7 @@ figcaption {
   .showcase-quad .showcase-card,
   [data-friend='clarisonic'] {
     float: left;
-    width: 50%
+    width: 50%;
   }
 
   [data-friend='kimpton-hotel'] figcaption,
@@ -244,14 +243,14 @@ figcaption {
 }
 
 .intro-copy h1 {
-  color: #666;
   margin: auto;
   max-width: 840px;
+  text-align: center;
+  line-height: 1.25em;
+  letter-spacing: 0.025em;
+  color: #666;
   font-size: 24px;
   font-weight: 400;
-  letter-spacing: .025em;
-  line-height: 1.25em;
-  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -284,11 +283,11 @@ figcaption {
 }
 
 .logo-showcase--logos {
-  margin: auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  margin: auto;
   max-width: 668px;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .logo-showcase--logos img,
@@ -339,13 +338,13 @@ figcaption {
 }
 
 .blog-highlights--post .cta-more {
-  color: #999;
   transition: color 0.5s;
+  color: #999;
 }
 
 .blog-highlights--post:hover .cta-more {
-  color: #fff;
   transition: color 0.25s;
+  color: #fff;
 }
 
 .blog-highlights--post--copy {
@@ -353,8 +352,8 @@ figcaption {
 }
 
 .blog-highlights--post h3 {
-  color: #fff;
   padding-bottom: 25px;
+  color: #fff;
   font-size: 15px;
   font-weight: 200;
 }
@@ -366,9 +365,9 @@ figcaption {
 @media (min-width: 1021px) {
   .blog-highlights {
     display: flex;
-    justify-content: center;
-    max-width: 1400px;
     margin: auto;
+    max-width: 1400px;
+    justify-content: center;
   }
 
   .blog-highlights img {
@@ -382,19 +381,19 @@ figcaption {
 
   .plus-icon {
     display: block;
-    opacity: 0;
     position: absolute;
-    color: #fff;
-    background: black;
-    padding: 15px;
+    transition: opacity 0.5s;
+    opacity: 0;
     margin-top: -170px;
     margin-left: 16vw;
-    transition: opacity 0.5s;
+    background: #000;
+    padding: 15px;
+    color: #fff;
   }
 
   .blog-highlights--post:hover .plus-icon {
-    opacity: 1;
     transition: opacity 0.5s;
+    opacity: 1;
   }
 }
 
