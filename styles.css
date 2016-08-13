@@ -118,6 +118,12 @@ figcaption {
   display: block;
 }
 
+.hero,
+.image-showcase {
+  margin: auto;
+  max-width: 1400px;
+}
+
 /* The Page */
 
 .hero img {
