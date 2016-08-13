@@ -1,0 +1,405 @@
+/* Some Basics */
+* {
+  box-sizing: border-box;
+}
+
+figure,
+body,
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* */
+html {
+  background-color: rgba(24, 24, 24, 0.95);
+}
+
+/* Typography */
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+h1,
+h3,
+p,
+a,
+figcaption,
+.hero--welcome {
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fine-header h1,
+figcaption {
+  color: #fff;
+}
+
+figcaption {
+  font-size: 1.2rem;
+}
+
+.cta-more {
+  color: #999;
+  font-style: italic;
+}
+
+/* The Nav */
+.fine-header::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+@media (min-width: 768px) {
+  .fine-header--nav {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.5s;
+  }
+
+  .fine-header--nav:hover {
+    background-color: #000;
+    transition: background-color 0.5s;
+  }
+}
+
+[data-nav='home'] {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 0.9rem;
+}
+
+.fine-header--menu {
+  position: relative;
+  display: inline-block;
+  float: right;
+  height: 18px;
+  width: 25px;
+  cursor: pointer;
+  margin: 18px 30px 0;
+  padding-top: 18px;
+}
+
+.menu--bar {
+  left: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+}
+
+/* TODO: Make this menu animate */
+.menu--bar:nth-child(1) {
+  top: 0;
+}
+
+.menu--bar:nth-child(2),
+.menu--bar:nth-child(3) {
+  top: 7px;
+}
+
+.menu--bar:nth-child(4) {
+  top: 14px;
+}
+
+/* Layout */
+.hero img,
+.showcase-card img {
+  display: block;
+}
+
+/* The Page */
+
+.hero img {
+  min-width: 100%;
+}
+
+@keyframes fadeInWelcome {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero--welcome {
+  transform: translateY(0);
+  background-color: #9aa142;
+  position: absolute;
+  left: 50%;
+  top: 75px;
+  color: #fff;
+  padding: 6px 15px 5px 0;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  opacity: 0;
+  animation: fadeInWelcome ease-in 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.hero--welcome::before {
+  content: '';
+  margin-right: -7px;
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #9aa142;
+}
+
+@media (min-width: 768px) {
+  .hero--welcome {
+    top: 115px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero--welcome {
+    top: 150px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero--welcome {
+    top: 215px;
+    font-size: 1.2rem;
+  }
+}
+
+.image-showcase::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.showcase-card img {
+  -webkit-filter: brightness(100%);
+  transition: -webkit-filter 0.5s;
+  transition-delay: 0.15s;
+}
+
+.showcase-card:hover img{
+  /* totally experimental and just for fun -- would not ship */
+  -webkit-filter: brightness(70%);
+  transition: -webkit-filter 0.5s;
+}
+
+/* TODO: fix this spacing. */
+.showcase-card figcaption {
+  position: absolute;;
+  opacity: 0;
+  margin-top: calc(-1 * (1.5rem + 10px));
+  padding-bottom: 10px;
+  padding-left: 10px;
+  transition: opacity 0.5s;
+}
+
+.showcase-card:hover figcaption {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+[data-friend='kimpton-hotel'],
+[data-friend='stags-leap'],
+[data-friend='dirty-habit'],
+[data-friend='aramark'] {
+  float: left;
+  width: 50%;
+}
+
+[data-friend='kimpton-hotel'] figcaption,
+[data-friend='stags-leap'] figcaption,
+[data-friend='dirty-habit'] figcaption,
+[data-friend='aramark'] figcaption {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .showcase-quad,
+  .showcase-quad .showcase-card,
+  [data-friend='clarisonic'] {
+    float: left;
+    width: 50%
+  }
+
+  [data-friend='kimpton-hotel'] figcaption,
+  [data-friend='stags-leap'] figcaption,
+  [data-friend='dirty-habit'] figcaption,
+  [data-friend='aramark'] figcaption {
+    font-size: 1.2rem;
+  }
+}
+
+.intro-copy {
+  background-color: #fff;
+  padding: 30px;
+}
+
+.intro-copy h1 {
+  color: #666;
+  margin: auto;
+  max-width: 840px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: .025em;
+  line-height: 1.25em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .intro-copy {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+
+  .intro-copy h1 {
+    font-size: 32px;
+  }
+
+  .intro-copy h1 span {
+    display: block;
+  }
+}
+
+@media (min-width: 1021px) {
+  .intro-copy h1 {
+    max-width: 920px;
+    font-size: 38px;
+  }
+}
+
+.logo-showcase {
+  display: none;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+.logo-showcase--logos {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 668px;
+}
+
+.logo-showcase--logos img,
+[data-cta='logo-showcase'] {
+  width: 222px;
+  height: 155px;
+}
+
+[data-cta='logo-showcase'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-cta='logo-showcase'] a {
+  padding: 25px 15px; /* padding for larger touch area */
+}
+
+@media (min-width: 768px) {
+  .logo-showcase {
+    display: block;
+  }
+}
+
+@media (min-width: 1021px) {
+  .logo-showcase--logos {
+    max-width: 920px;
+  }
+
+  .logo-showcase--logos img,
+  [data-cta='logo-showcase'] {
+    width: 153px;
+    height: 107px;
+  }
+}
+
+.blog-highlights {
+  background-color: #212121;
+}
+
+.blog-highlights img {
+  display: none;
+}
+
+.blog-highlights--post {
+  display: block; /* Because it's an anchor element */
+  border-bottom: #474747 solid 1px;
+}
+
+.blog-highlights--post .cta-more {
+  color: #999;
+  transition: color 0.5s;
+}
+
+.blog-highlights--post:hover .cta-more {
+  color: #fff;
+  transition: color 0.25s;
+}
+
+.blog-highlights--post--copy {
+  padding: 35px 25px;
+}
+
+.blog-highlights--post h3 {
+  color: #fff;
+  padding-bottom: 25px;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.plus-icon {
+  display: none;
+}
+
+@media (min-width: 1021px) {
+  .blog-highlights {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  .blog-highlights img {
+    display: block;
+  }
+
+  .blog-highlights--post {
+    border: 0;
+    max-width: 25%;
+  }
+
+  .plus-icon {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    color: #fff;
+    background: black;
+    padding: 15px;
+    margin-top: -170px;
+    margin-left: 16vw;
+    transition: opacity 0.5s;
+  }
+
+  .blog-highlights--post:hover .plus-icon {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+}
+
+@media (min-width: 1400px) {
+  .plus-icon {
+    margin-left: 230px;
+  }
+}
