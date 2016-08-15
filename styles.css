@@ -52,6 +52,13 @@ figcaption {
 }
 
 /* The Nav */
+.fine-header {
+  display: block;
+  position: relative;
+  margin: auto;
+  max-width: 1400px;
+}
+
 .fine-header::after {
   display: table;
   clear: both;
@@ -69,6 +76,14 @@ figcaption {
   .fine-header--nav:hover {
     transition: background-color 0.5s;
     background-color: #000;
+  }
+}
+
+@media (min-width: 1400px) {
+  .fine-header--nav {
+    left: -50%;
+    margin-left: 700px;
+    width: 1400px;
   }
 }
 
