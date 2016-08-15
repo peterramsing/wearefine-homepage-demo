@@ -226,7 +226,7 @@ figcaption {
   font-size: 0.8rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 479px) {
   .showcase-quad,
   .showcase-quad .showcase-card,
   [data-friend='clarisonic'] {
