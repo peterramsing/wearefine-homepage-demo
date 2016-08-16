@@ -1,0 +1,225 @@
+/* Some Basics */
+* {
+  box-sizing: border-box;
+}
+
+figure,
+body,
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Background color */
+html {
+  background-color: #ededed;
+}
+
+/* Typography */
+@import 'https://fonts.googleapis.com/css?family=Architects+Daughter';
+
+body {
+  font-family: sans-serif;
+}
+
+.cat-poster {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .cat-poster {
+    display: block;
+    position: absolute;
+    width: 150px;
+  }
+
+  [data-cat='sam'] {
+    left: 8%;
+    top: 400px;
+    transform: rotate(-6deg);
+  }
+
+  [data-cat='whiskers'] {
+    right: 8%;
+    top: 300px;
+    transform: rotate(9deg);
+  }
+}
+
+
+.elevator {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  margin-left: -350px;
+  border: 55px solid #bababa;
+  border-bottom: 0;
+  background-color: #9c9c9c;
+  width: 700px;
+  height: 700px;
+}
+
+
+
+.elevator--floor-indicator {
+  background: #fff;
+  width: 140px;
+  height: 30px;
+  margin: -42px auto 12px;
+
+  text-align: center;
+  line-height: 30px;
+  letter-spacing: 4px;
+
+  color: #101110;
+
+  font-weight: 900;
+}
+
+/* Elevator Indicator Animations */
+@keyframes elevatorFloorIndicator-cycle {
+  0% { color: inherit; }
+  20% { color: #e9bd00; }
+  80% { color: #e9bd00; }
+  100% {color: inherit; }
+}
+
+@keyframes elevatorFloorIndicator-stop {
+  0% { color: inherit; }
+  20% { color: #e9bd00; }
+  100% { color: #e9bd00; }
+}
+
+.elevator--floor-indicator span:nth-child(1) {
+  animation-name: elevatorFloorIndicator-cycle;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 0s
+}
+
+.elevator--floor-indicator span:nth-child(2) {
+  animation-name: elevatorFloorIndicator-stop;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s
+}
+
+.elevator--interior {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.elevator--interior-bottom {
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  position: absolute;
+
+  border-top: 10px solid tan;
+
+  /* http://lea.verou.me/css3patterns/ */
+  background-color: gray;
+  background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+  background-size: 50px 50px;
+}
+
+
+.elevator--interior-sign {
+  position: absolute;
+  top: 55px;
+  left: 250px;
+  padding: 10px;
+
+  transform: rotate(-2deg);
+
+  border-bottom-right-radius: 14px;
+
+  width: 190px;
+  height: 200px;
+  background-color: #f1f1f1;
+
+  font-family: 'Architects Daughter', cursive;
+}
+
+.elevator--interior-sign h1 {
+  font-size: 1.5em;
+}
+
+.elevator--interior-sign p {
+  font-size: 1.3em;
+}
+
+[data-icon='rocket'] {
+  font-size: 3em;
+}
+
+[class*='elevator--door-'] {
+  height: 100%;
+  width: 50%;
+  background-color: #696969;
+
+  will-change: transform;
+  transform: scaleX(1);
+
+  animation-name: elevatorDoorMovement;
+  animation-duration: 3.5s;
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes elevatorDoorMovement {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0.05); }
+}
+
+.elevator--door-left {
+  float: left;
+  border-right: 1px solid #010101;
+  transform-origin: left;
+}
+
+.elevator--door-right {
+  float: right;
+  border-left: 1px solid #010101;
+  transform-origin: right;
+}
+
+
+.floor {
+  position: absolute;
+  top: 850px;
+  background-image: linear-gradient(to bottom, #2e291e 0%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 200px;
+}
+
+
+.attribution {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+  }
+
+  .attribution a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .attribution a:hover,
+  .attribution a:active,
+  .attribution a:visited {
+    color: #000;
+  }
+}
