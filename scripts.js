@@ -4,6 +4,6 @@ document.getElementsByClassName('js-floor-button')[0].onclick = function() {
 
     setTimeout(function () {
       document.getElementsByClassName('js-elevator--floor-indicator')[0].innerHTML = 'SPACE!';
-    }, 2500);
+    }, 7500);
   }
 };
