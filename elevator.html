@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="elevator.css">
 
   </head>
-  <body>
+  <body class="normal">
 
     <main>
 
@@ -18,13 +18,20 @@
 
       <div class="elevator">
 
-        <div class="elevator--floor-indicator">
+        <div class="elevator--floor-indicator js-elevator--floor-indicator">
           <span>G</span>
           <span>2</span>
           <span>3</span>
           <span>4</span>
           <span>5</span>
         </div> <!-- [end] floor-indicator  -->
+
+        <div class="elevator--floor-buttons">
+
+          <span class="js-floor-button" data-floor="space">🚀</span>
+          <span>▲</span>
+          <span>▼</span>
+        </div>
 
         <div class="elevator--interior">
 
@@ -70,7 +77,7 @@
 
     </main>
 
-
+    <script src="scripts.js"></script>
 
   </body>
 </html>

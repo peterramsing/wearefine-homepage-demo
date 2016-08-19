@@ -23,12 +23,7 @@ html {
 /* Typography */
 @import 'https://fonts.googleapis.com/css?family=Lato';
 
-h1,
-h3,
-p,
-a,
-figcaption,
-.hero--welcome {
+body {
   font-family: 'Lato', sans-serif;
 }
 
@@ -63,6 +58,26 @@ figcaption {
   display: table;
   clear: both;
   content: '';
+}
+
+.fine-header--links {
+  position: absolute;
+  width: 100%;
+  background: black;
+  margin: 0;
+  color: white;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.fine-header--links li {
+  padding: 14px 0 14px 30px;
+}
+
+/* TODO: last? */
+.fine-header--links li:not(last-of-child) {
+  border-bottom: 1px solid grey;
 }
 
 @media (min-width: 768px) {
